@@ -125,14 +125,10 @@
     <Compile Include="Services\Interfaces\Crud\IUpdateService.cs" />
     <Compile Include="Services\Interfaces\IFolderService.cs" />
     <Compile Include="Services\Interfaces\IRecordingService.cs" />
-    <Compile Include="Services\Interfaces\ITranscriptionResultsService.cs" />
-    <Compile Include="Services\Interfaces\ITranscriptionService.cs" />
     <Compile Include="Services\Config.cs" />
     <Compile Include="Services\Interfaces\IRegistrationService.cs" />
     <Compile Include="Services\Interfaces\IUploadService.cs" />
     <Compile Include="Services\RecordingsService.cs" />
-    <Compile Include="Services\TranscriptionResultsService.cs" />
-    <Compile Include="Services\TranscriptionsService.cs" />
     <Compile Include="Services\CustomersRegistrationService.cs" />
     <Compile Include="Services\UploadService.cs" />
   </ItemGroup>
@@ -142,7 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TranscribeMe.API.Data\TranscribeMe.API.Data.csproj">
-      <Project>{2C125B71-CD31-4639-AF57-EAA56600B776}</Project>
+      <Project>{2c125b71-cd31-4639-af57-eaa56600b776}</Project>
       <Name>TranscribeMe.API.Data</Name>
     </ProjectReference>
   </ItemGroup>

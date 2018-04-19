@@ -138,7 +138,6 @@
     <Compile Include="BatchEntitiesOperationModel.cs" />
     <Compile Include="Recordings\RemoteUploadModel.cs" />
     <Compile Include="Recordings\SharedRecordingDetailsModel.cs" />
-    <Compile Include="SkillLevelModel.cs" />
     <Compile Include="Subscriptions\OrderSubscriptionModel.cs" />
     <Compile Include="Subscriptions\SubscriptionCreateModel.cs" />
     <Compile Include="Subscriptions\SubscriptionModel.cs" />
@@ -150,23 +149,12 @@
     <Compile Include="Teams\TeamUserBaseModel.cs" />
     <Compile Include="Upload\UploadRedirectModel.cs" />
     <Compile Include="UserActivateModel.cs" />
-    <Compile Include="UserAgreementModel.cs" />
-    <Compile Include="BalanceModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="UserPasswordResetModel.cs" />
     <Compile Include="UploadLinkRequestModel.cs" />
     <Compile Include="UserPasswordModel.cs" />
-    <Compile Include="SnippetModel.cs" />
-    <Compile Include="StyleGuideRuleModel.cs" />
-    <Compile Include="StyleGuidesGroupModel.cs" />
     <Compile Include="TranscriptFileModel.cs" />
-    <Compile Include="TranscriptionResultModel.cs" />
-    <Compile Include="TranscriptionTaskModel.cs" />
-    <Compile Include="TranscriptionTaskResultTextModel.cs" />
-    <Compile Include="TranscriptionWorkModel.cs" />
     <Compile Include="Errors\UnsuccessResponse.cs" />
-    <Compile Include="WaveformModel.cs" />
-    <Compile Include="WorkItemMetadataModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
