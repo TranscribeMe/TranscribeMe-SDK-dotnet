@@ -19,13 +19,18 @@ namespace TranscribeMe.API.SDK.Services
 
         public async Task<ObjectsList<RecordingListItemModel>> Get(RecordingsQuery query)
         {
-            //var rM = new HttpRequestMessage(HttpMethod.Get, _serviceUrl)
-            //             {
-            //                 Content = new ObjectContent<RecordingsQuery>(query, new JsonMediaTypeFormatter())
-            //             };
+            var url = $"{_serviceUrl}?{query.GetQueryString()}";
 
-            var response = await Client.GetAsync($"{_serviceUrl}?{query.GetQueryString()}");
+            var response = await Client.GetAsync(url).ConfigureAwait(false);
             return await response.Content.ReadAsAsync<ObjectsList<RecordingListItemModel>>();
+        }
+
+        public async Task<int> GetStatus(string recordingId)
+        {
+            var url = $"{_serviceUrl}/{recordingId}/status";
+
+            var response = await Client.GetAsync(url).ConfigureAwait(false);
+            return await response.Content.ReadAsAsync<int>();
         }
     }
 }
