@@ -1,5 +1,5 @@
-﻿using TranscribeMe.API.SDK.Http;
-using TranscribeMe.API.SDK.Services.Configurations;
+﻿using TranscribeMe.API.SDK.Configurations;
+using TranscribeMe.API.SDK.Http;
 
 namespace TranscribeMe.API.SDK.Auth.Flows
 {

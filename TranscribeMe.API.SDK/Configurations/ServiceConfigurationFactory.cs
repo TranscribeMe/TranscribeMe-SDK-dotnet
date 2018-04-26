@@ -1,18 +1,15 @@
-﻿namespace TranscribeMe.API.SDK.Services.Configurations
+﻿using TranscribeMe.API.SDK.Services;
+
+namespace TranscribeMe.API.SDK.Configurations
 {
     public class ServiceConfigurationFactory : IServiceConfigurationFactory
     {
-
         public ServiceConfigurationFactory(Config mode)
         {
             ServiceMode = mode;
         }
 
-        public Config ServiceMode
-        {
-            get;
-            private set;
-        }
+        public Config ServiceMode { get; }
 
         public ITmApiConfiguration CreateConfiguration()
         {

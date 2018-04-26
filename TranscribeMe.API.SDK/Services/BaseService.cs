@@ -3,13 +3,14 @@
 using TranscribeMe.API.SDK.Http;
 using TranscribeMe.API.SDK.Http.Handlers;
 using TranscribeMe.API.SDK.Auth;
-using TranscribeMe.API.SDK.Services.Configurations;
+using TranscribeMe.API.SDK.Configurations;
 
 namespace TranscribeMe.API.SDK.Services
 {
     public class BaseService
     {
         #region Initializer
+
         public class Initializer
         {
             public UserCredentials Credentials { get; private set; }
@@ -31,11 +32,12 @@ namespace TranscribeMe.API.SDK.Services
                 Credentials = credentials;
             }
         }
+
         #endregion
 
-        private UserCredentials _credentials;
+        private readonly UserCredentials _credentials;
 
-        private HttpClient _client;
+        private readonly HttpClient _client;
 
         protected HttpClient Client => _client;
 

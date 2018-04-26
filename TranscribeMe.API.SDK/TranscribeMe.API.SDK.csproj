@@ -55,6 +55,7 @@
       <HintPath>..\..\Packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -98,13 +99,15 @@
     <Compile Include="Auth\Flows\AuthorizationCodeFlowBase.cs" />
     <Compile Include="Auth\Flows\FacebookAuthorizationCodeFlow.cs" />
     <Compile Include="Auth\Flows\IAuthorizationCodeFlow.cs" />
+    <Compile Include="Configurations\ApplicationAuthorizationElement.cs" />
     <Compile Include="Exceptions\TmApiException.cs" />
     <Compile Include="Extensions\QueryObjectsExtensions.cs" />
-    <Compile Include="Services\Configurations\IServiceConfigurationFactory.cs" />
-    <Compile Include="Services\Configurations\ITmApiConfiguration.cs" />
-    <Compile Include="Services\Configurations\SandboxConfiguration.cs" />
-    <Compile Include="Services\Configurations\ServiceConfigurationFactory.cs" />
-    <Compile Include="Services\Configurations\StagingConfiguration.cs" />
+    <Compile Include="Configurations\IServiceConfigurationFactory.cs" />
+    <Compile Include="Configurations\ITmApiConfiguration.cs" />
+    <Compile Include="Configurations\PasswordAuthorizationElement.cs" />
+    <Compile Include="Configurations\SandboxConfiguration.cs" />
+    <Compile Include="Configurations\ServiceConfigurationFactory.cs" />
+    <Compile Include="Configurations\StagingConfiguration.cs" />
     <Compile Include="Http\Handlers\AuthHeaderDelegatingHandler.cs" />
     <Compile Include="Http\Handlers\RefreshTokenDelegatingHandler.cs.cs" />
     <Compile Include="Http\Handlers\ServiceResponseDelegatingHandler.cs" />
@@ -118,6 +121,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Responses\TokenResponse.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Configurations\TmAuthorizationSection.cs" />
+    <Compile Include="Configurations\TokenAuthorizationElement.cs" />
     <Compile Include="Services\FoldersService.cs" />
     <Compile Include="Services\Interfaces\Crud\ICreateService.cs" />
     <Compile Include="Services\Interfaces\Crud\IDeleteService.cs" />

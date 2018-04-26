@@ -2,8 +2,8 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
+using TranscribeMe.API.SDK.Configurations;
 using TranscribeMe.API.SDK.Responses;
-using TranscribeMe.API.SDK.Services.Configurations;
 
 namespace TranscribeMe.API.SDK.Auth.Flows
 {

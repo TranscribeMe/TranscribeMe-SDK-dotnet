@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 
 using TranscribeMe.API.SDK.Auth.Flows;
-using TranscribeMe.API.SDK.Services.Configurations;
+using TranscribeMe.API.SDK.Configurations;
 
 namespace TranscribeMe.API.SDK.Auth
 {
@@ -32,8 +32,10 @@ namespace TranscribeMe.API.SDK.Auth
 
         public string Token { get; set; }
         public string UserId { get; set; }
+
         public DateTime TokenExpiredUTC { get; set; }
         public ITmApiConfiguration ApiConfig { get; set; }
+
         protected string RefreshToken { get; set; }
 
         private readonly IAuthorizationCodeFlow _flow;

@@ -1,4 +1,4 @@
-﻿namespace TranscribeMe.API.SDK.Services.Configurations
+﻿namespace TranscribeMe.API.SDK.Configurations
 {
     public interface ITmApiConfiguration
     {
