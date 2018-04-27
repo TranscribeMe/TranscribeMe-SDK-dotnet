@@ -101,6 +101,7 @@
     <Compile Include="Auth\Flows\IAuthorizationCodeFlow.cs" />
     <Compile Include="Configurations\ApplicationAuthorizationElement.cs" />
     <Compile Include="Exceptions\TmApiException.cs" />
+    <Compile Include="Exceptions\TmSdkServiceException.cs" />
     <Compile Include="Extensions\QueryObjectsExtensions.cs" />
     <Compile Include="Configurations\IServiceConfigurationFactory.cs" />
     <Compile Include="Configurations\ITmApiConfiguration.cs" />
