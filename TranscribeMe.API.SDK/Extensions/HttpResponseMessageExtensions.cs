@@ -43,9 +43,9 @@ namespace TranscribeMe.API.SDK.Extensions
             }
             finally
             {
-                if (!response.IsSuccessStatusCode && response.Content != null)
+                if (!response.IsSuccessStatusCode)
                 {
-                    response.Content.Dispose();
+                    response.Content?.Dispose();
                 }
             }
         }
