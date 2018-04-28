@@ -4,7 +4,7 @@ You can test it by sending **POST** request to `localhost:[port]//CallbackHandle
 
 `Json request` sample:
 ```json
-{ID:"123456-78990"}
+{"ID":"123456-78990"}
 ```
 
 ## Implementation details
