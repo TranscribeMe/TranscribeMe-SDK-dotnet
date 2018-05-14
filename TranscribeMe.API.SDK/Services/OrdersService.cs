@@ -21,11 +21,20 @@ namespace TranscribeMe.API.SDK.Services
             return await response.Content.ReadAsAsync<CreateOrderModel>();
         }
 
-        public async Task Delete(string instanceId)
+        public async Task Delete(string orderId)
         {
-            var url = $"{_serviceUrl}/{instanceId}";
+            var url = $"{_serviceUrl}/{orderId}";
 
-             await Client.DeleteAsync(url).ConfigureAwait(false);
+            await Client.DeleteAsync(url).ConfigureAwait(false);
+        }
+
+        public async Task<OrderDetailsModel> SetPromoCode(string orderId, OrderPromoCodeModel promoCode)
+        {
+            var url = $"{_serviceUrl}/{orderId}/promocode";
+
+            var response = await Client.PostAsJsonAsync(url, promoCode).ConfigureAwait(false);
+
+            return await response.Content.ReadAsAsync<OrderDetailsModel>();
         }
     }
 }
