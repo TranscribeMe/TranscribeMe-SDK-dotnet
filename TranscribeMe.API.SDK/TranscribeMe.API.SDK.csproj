@@ -130,10 +130,12 @@
     <Compile Include="Services\Interfaces\Crud\IQueryService.cs" />
     <Compile Include="Services\Interfaces\Crud\IUpdateService.cs" />
     <Compile Include="Services\Interfaces\IFolderService.cs" />
+    <Compile Include="Services\Interfaces\IOrdersService.cs" />
     <Compile Include="Services\Interfaces\IRecordingService.cs" />
     <Compile Include="Services\Config.cs" />
     <Compile Include="Services\Interfaces\IRegistrationService.cs" />
     <Compile Include="Services\Interfaces\IUploadService.cs" />
+    <Compile Include="Services\OrdersService.cs" />
     <Compile Include="Services\RecordingsService.cs" />
     <Compile Include="Services\CustomersRegistrationService.cs" />
     <Compile Include="Services\UploadService.cs" />

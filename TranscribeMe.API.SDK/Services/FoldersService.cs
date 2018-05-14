@@ -25,7 +25,9 @@ namespace TranscribeMe.API.SDK.Services
 
         public async Task Delete(string instanceId)
         {
-            await Client.DeleteAsync($"{_serviceUrl}/{instanceId}");
+            var url = $"{_serviceUrl}/{instanceId}";
+
+            await Client.DeleteAsync(url);
         }
 
         public async Task<ObjectsList<FolderModel>> Get(FoldersQuery query)
