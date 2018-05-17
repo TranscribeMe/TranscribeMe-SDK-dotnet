@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
+using TranscribeMe.API.Data;
 using TranscribeMe.API.Data.Billing;
 using TranscribeMe.API.Data.Orders;
 using TranscribeMe.API.SDK.Services.Interfaces;
@@ -15,6 +18,18 @@ namespace TranscribeMe.API.SDK.Services
         public OrdersService(Initializer initializer)
             : base(initializer)
         {
+        }
+
+        public async Task<CreateOrderModel> Create(IList<string> recordings)
+        {
+            if (recordings == null)
+            {
+                throw new ArgumentNullException(nameof(recordings));
+            }
+
+            var model = new CreateOrderModel { Recordings = recordings.ToList() };
+
+            return await Create(model);
         }
 
         public async Task<CreateOrderModel> Create(CreateOrderModel instance)
@@ -38,11 +53,12 @@ namespace TranscribeMe.API.SDK.Services
             return await response.Content.ReadAsAsync<OrderDetailsModel>();
         }
 
-        public async Task<OrderDetailsModel> SetPromoCode(string orderId, OrderPromoCodeModel promoCode)
+        public async Task<OrderDetailsModel> SetPromoCode(string orderId, string promoCode)
         {
             var url = $"{_serviceUrl}/{orderId}/promocode";
+            var model = new PromoCodeModel { Code = promoCode };
 
-            var response = await Client.PostAsJsonAsync(url, promoCode).ConfigureAwait(false);
+            var response = await Client.PostAsJsonAsync(url, model).ConfigureAwait(false);
             return await response.Content.ReadAsAsync<OrderDetailsModel>();
         }
 

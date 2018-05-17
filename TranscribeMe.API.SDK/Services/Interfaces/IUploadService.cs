@@ -14,6 +14,6 @@ namespace TranscribeMe.API.SDK.Services.Interfaces
 
         Task<HttpStatusCode> CommitAsyncUpload(string uploadId, string recordingId);
 
-        Task<string> Upload(string recordingId);
+        Task<string> Upload(string filePath);
     }
 }
