@@ -37,19 +37,28 @@ namespace TranscribeMe.API.SDK.Services
 
         private readonly UserCredentials _credentials;
 
-        private readonly HttpClient _client;
+        private static volatile HttpClient _client;
 
-        protected HttpClient Client => _client;
+        private static object syncRoot = new object();
+
+        protected static HttpClient Client => _client;
 
         public BaseService(Initializer initializer)
         {
             _credentials = initializer.Credentials;
-            _client = initializer.ClientFactory.CreateHttpClient(initializer.Configuration.ApiUrl);
 
-            var headerName = initializer.Configuration.ApiKeyHeaderName;
-            var headerValue = _credentials.Application.ClientId;
+            if (_client == null)
+            {
+                lock (syncRoot)
+                {
+                    _client = initializer.ClientFactory.CreateHttpClient(initializer.Configuration.ApiUrl);
 
-            _client.DefaultRequestHeaders.Add(headerName, headerValue);
+                    var headerName = initializer.Configuration.ApiKeyHeaderName;
+                    var headerValue = _credentials.Application.ClientId;
+
+                    _client.DefaultRequestHeaders.Add(headerName, headerValue);
+                }
+            }
         }
     }
 }

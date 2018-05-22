@@ -1,65 +1,74 @@
 ﻿using System;
-using System.IO;
 using System.Threading.Tasks;
-using System.Web;
 
-using TranscribeMe.API.Data.Queries;
-using TranscribeMe.API.SDK.Auth;
-using TranscribeMe.API.SDK.Services;
-using TranscribeMe.API.SDK.Services.Interfaces;
+using TranscribeMe.API.SDK.Sample.Examples;
 
 namespace TranscribeMe.API.SDK.Sample
 {
-    class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
-            var secret = new ApplicationCredentials("", "");
-            var credentials = TmApiWebAuthorizationBroker.AuthorizeAsync(secret, "", "", Config.Sandbox).Result;
-
-            var recordingService = new RecordingsService(new BaseService.Initializer(credentials));
-            var result = recordingService.Get(new RecordingsQuery { User = "" });
-
-            result.Wait();
-
-            Console.WriteLine(result.Result.Total);
+            MainAsync().GetAwaiter().GetResult();
         }
 
-        public static async Task UploadAsyncTest(IUploadService service)
+        private static async Task MainAsync()
         {
+            Console.WriteLine("Initializing services...");
+
+            await OrderWorkflow.InitializeServices();
+
             const string FileName = "";
+            const string PromoCode = "";
 
-            var model = await service.GetUploadUrl(FileName, true);
+            await CreateOrderSample(FileName, PromoCode);
 
-            var queryDictionary = HttpUtility.ParseQueryString(model.Url.Query);
+            //const string RecordingId = "";
+            //const string Format = "pdf";
+            //const string OutputFile = "output.pdf";
 
-            var recordingId = queryDictionary["recordingId"];
-            var uploadId = queryDictionary["uploadId"];
+            //await GetOrderResultSample(RecordingId, Format, OutputFile);
+        }
 
-            using (var fileStream = File.OpenRead(FileName))
+        private static async Task CreateOrderSample(string fileName, string promoCode)
+        {
+            Console.WriteLine("Uploading file...");
+
+            var recordingId = await OrderWorkflow.UploadFile(fileName);
+
+            Console.WriteLine($"File uploaded: Recording Id: {recordingId}");
+            Console.WriteLine("Creaating order...");
+
+            var orderId = await OrderWorkflow.CreateOrder(recordingId);
+
+            Console.WriteLine($"Order created. Order Id: {orderId}");
+            Console.WriteLine("Setting promocode...");
+
+            await OrderWorkflow.SetPromoCode(orderId, promoCode);
+
+            Console.WriteLine("Updating order settings!");
+
+            await OrderWorkflow.UpdateSettings(orderId);
+
+            Console.WriteLine("Placing order...");
+            await OrderWorkflow.PlaceOrder(orderId);
+
+            Console.WriteLine("Order creation complete!");
+        }
+
+        private static async Task GetOrderResultSample(string recordingId, string format, string outputFile)
+        {
+            Console.WriteLine("Checking file status...");
+            var status = await OrderWorkflow.CheckOrderStatus(recordingId);
+            if (status == 3)
             {
-                int chunkSize = 5242880;
-                var chunksCount = (int)Math.Ceiling(fileStream.Length / (double)chunkSize);
-                for (var i = 0; i < chunksCount; i++)
-                {
-                    using (var inputStream = new MemoryStream())
-                    {
-                        var bufferSize = i < chunksCount - 1
-                            ? chunkSize
-                            : fileStream.Length - chunkSize * (chunksCount - 1);
-                        var buffer = new byte[bufferSize];
-
-                        fileStream.Read(buffer, 0, buffer.Length);
-
-                        inputStream.Write(buffer, 0, buffer.Length);
-                        inputStream.Seek(0, SeekOrigin.Begin);
-
-                        var chunkUploadResult = await service.UploadChunk(uploadId, recordingId, i, inputStream);
-                    }
-                }
+                Console.WriteLine("Downloading result...");
+                await OrderWorkflow.GetResult(recordingId, format, outputFile);
             }
-
-            var commitResult = await service.CommitAsyncUpload(uploadId, recordingId);
+            else
+            {
+                Console.WriteLine("File not ready yet!");
+            }
         }
     }
 }
