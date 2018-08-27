@@ -126,7 +126,7 @@ namespace TranscribeMe.API.SDK.Services
 
                     var chunkUploadResult = await UploadChunk(uploadId,
                                                               recordingId,
-                                                              UploadChunkSize,
+                                                              i,
                                                               inputStream).ConfigureAwait(false);
                     if (chunkUploadResult != HttpStatusCode.OK)
                     {
