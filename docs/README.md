@@ -1,2 +1,2 @@
 # .NET-SDK DOCS
-[Link to request key form](forms/REQUEST.md)
+[Link to request key form](forms/README.md)
