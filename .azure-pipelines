@@ -1,0 +1,11 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
+    restoreNugetPackages: true
