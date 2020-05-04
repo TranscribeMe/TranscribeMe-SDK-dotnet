@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F297E082-A446-437D-918E-6E155D2A985E}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{81DF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranscribeMe.API.SDK.Sample", "Samples\TranscribeMe.API.SDK.Sample\TranscribeMe.API.SDK.Sample.csproj", "{40A89D27-78C9-455E-998E-2D2B37EB2CFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranscribeMe.API.Data", "TranscribeMe.API.Data\TranscribeMe.API.Data.csproj", "{2C125B71-CD31-4639-AF57-EAA56600B776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranscribeMe.API.Data", "TranscribeMe.API.Data\TranscribeMe.API.Data.csproj", "{2C125B71-CD31-4639-AF57-EAA56600B776}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranscribeMe.CallbackHandler", "Samples\TranscribeMe.CallbackHandler\TranscribeMe.CallbackHandler.csproj", "{470B7AD8-880A-48C1-9849-1B4B72AAD091}"
 EndProject
@@ -51,14 +51,14 @@ Global
 		{40A89D27-78C9-455E-998E-2D2B37EB2CFC}.Testing|Any CPU.Build.0 = Testing_SpeechPal|Any CPU
 		{2C125B71-CD31-4639-AF57-EAA56600B776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C125B71-CD31-4639-AF57-EAA56600B776}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C125B71-CD31-4639-AF57-EAA56600B776}.Release_SpeechPal|Any CPU.ActiveCfg = Release_SpeechPal|Any CPU
-		{2C125B71-CD31-4639-AF57-EAA56600B776}.Release_SpeechPal|Any CPU.Build.0 = Release_SpeechPal|Any CPU
+		{2C125B71-CD31-4639-AF57-EAA56600B776}.Release_SpeechPal|Any CPU.ActiveCfg = Release|Any CPU
+		{2C125B71-CD31-4639-AF57-EAA56600B776}.Release_SpeechPal|Any CPU.Build.0 = Release|Any CPU
 		{2C125B71-CD31-4639-AF57-EAA56600B776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C125B71-CD31-4639-AF57-EAA56600B776}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing_SpeechPal|Any CPU.ActiveCfg = Testing_SpeechPal|Any CPU
-		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing_SpeechPal|Any CPU.Build.0 = Testing_SpeechPal|Any CPU
-		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
-		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing|Any CPU.Build.0 = Testing|Any CPU
+		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing_SpeechPal|Any CPU.ActiveCfg = Release|Any CPU
+		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing_SpeechPal|Any CPU.Build.0 = Release|Any CPU
+		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing|Any CPU.ActiveCfg = Release|Any CPU
+		{2C125B71-CD31-4639-AF57-EAA56600B776}.Testing|Any CPU.Build.0 = Release|Any CPU
 		{470B7AD8-880A-48C1-9849-1B4B72AAD091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{470B7AD8-880A-48C1-9849-1B4B72AAD091}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{470B7AD8-880A-48C1-9849-1B4B72AAD091}.Release_SpeechPal|Any CPU.ActiveCfg = Release|Any CPU
