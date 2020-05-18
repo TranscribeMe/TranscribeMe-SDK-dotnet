@@ -1,6 +1,6 @@
 # TranscribeMe .NET Client Library
 
-[![Build Status](https://dev.azure.com/TranscribeMe/TranscribeMe-SDK-dotnet/_apis/build/status/TranscribeMe-SDK-dotnet?branchName=master)](https://dev.azure.com/TranscribeMe/TranscribeMe-SDK-dotnet/_build/latest?definitionId=4&branchName=master)
+[![Build Status](https://dev.azure.com/TranscribeMe/TranscribeMe-SDK-dotnet/_apis/build/status/TranscribeMe.TranscribeMe-SDK-dotnet?branchName=master)](https://dev.azure.com/TranscribeMe/TranscribeMe-SDK-dotnet/_build/latest?definitionId=6&branchName=master)
 
 Integrate the [TranscribeMe API](https://rest-api.transcribeme.com/help) into your .NET project!
 
